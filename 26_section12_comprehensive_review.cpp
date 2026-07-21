@@ -45,7 +45,7 @@ int main() {
     
     usePotion(nullptr, 50);
 
-    std::cout << "\n--- POINTER VE CONST TESTLERI ---\n";
+    std::cout << "\n--- POINTER AND CONST TESTS ---\n";
 
     
     int* const enemy_health_ptr = &enemy_health; 

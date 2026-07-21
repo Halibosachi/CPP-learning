@@ -10,7 +10,5 @@ int main(){
 
     weightControl(current_weight);
 
-
-
     return 0;
 }
