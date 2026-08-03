@@ -1,12 +1,13 @@
 #include <iostream>
 
+// Struct to encapsulate and return multiple values (minimum and maximum) from a function.
 struct MinMax {
     int min;
     int max;
 };
 
-
-MinMax getMinMax(int a, int b) {   // Returns a MinMax struct containing the smaller and larger value.
+// Compares two integers and returns a MinMax struct containing the smaller and larger value.
+MinMax getMinMax(int a, int b) {
    if(a > b){
     return {b , a};
    } else {
