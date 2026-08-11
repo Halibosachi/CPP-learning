@@ -1,7 +1,7 @@
 #include <iostream>
 
-void changeTarget(int*& target_ptr, int* new_target_address){                               //Changing pointer's value with pointer by reference.
-    target_ptr = new_target_address;                                                        //Redirecting the soriginal pointer to point to the new enemy's memory address.
+void changeTarget(int*& target_ptr, int* new_target_address){                               // Changing pointer's value with pointer by reference.
+    target_ptr = new_target_address;                                                        // Redirecting the original pointer to point to the new enemy's memory address.
     std::cout << "Target locked to a new enemy!\n";
 }
 
