@@ -12,13 +12,13 @@ void takeDamage(int& hp, int damage) {
     std::cout << damage << " Damage taken!\n";
 }
 
-void takeDamage(int* hp, int damage) {
+void takeDamage(int* hp, int damage) {                                          // Overloading function to take pointer for "hp".
     *hp -= damage;
     std::cout << damage << " Damage taken!\n";
 }
 
 void usePotion(int* health_ptr, int heal_amount) {
-    if(health_ptr){
+    if(health_ptr){                                                             // nullptr check.
         *health_ptr +=heal_amount;
     } else {
         std::cout<<"There is no target for the potion to be used on."<<'\n';
@@ -36,7 +36,7 @@ int main() {
     
     printHeroInfo(name, 10);
 
-    takeDamage(hero_health, 20); 
+    takeDamage(hero_health, 20);                                                // "takeDamage" function's pass by reference version works here because we are sending lvalue "hero_health".
     std::cout << "Current health: " << hero_health << '\n';
 
     int* arthur_hp_ptr { &hero_health };
@@ -49,7 +49,7 @@ int main() {
 
     
     int* const enemy_health_ptr = &enemy_health; 
-    takeDamage(enemy_health_ptr, 15);
+    takeDamage(enemy_health_ptr, 15);                                           // "takeDamage" function's pass by address version works here because we are sending pointer.
 
     
     std::cout << "Enemy current health: " << enemy_health << '\n';
@@ -58,9 +58,9 @@ int main() {
     
     const int* const sacred_sword_damage_ptr = &sacred_sword_damage;
 
-    //*sacred_sword_damage_ptr -= 5;  //This line gives error because with dereference operator we are trying to change value that we said const.
+    //*sacred_sword_damage_ptr -= 5;                                            // This line gives error because with dereference operator we are trying to change value that we said const.
     
-    //sacred_sword_damage_ptr = &enemy_health;    //This line also gives error because "crystal_ptr" const pointer we can't change it's value.
+    //sacred_sword_damage_ptr = &enemy_health;                                  // This line also gives error because "crystal_ptr" const pointer we can't change it's value.
 
     
 
